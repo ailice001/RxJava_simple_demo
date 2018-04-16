@@ -18,11 +18,11 @@ public class Work {
             .subscribeOn(Schedulers.io())
             .observeOn(Schedulers.single())
             .subscribe(System.out::println, Throwable::printStackTrace);
-    // 由于处理异步，需要等待异步执行完成再结束主线程
+    // aysnc to get data
         Thread.sleep(2000); // <--- wait for the flow to finish
 
 
-        // 上面函数式的拆分
+        // same as up
 /*        Flowable<String> source = Flowable.fromCallable(() -> {
             Thread.sleep(1000); //  imitate expensive computation
             return "Done";
